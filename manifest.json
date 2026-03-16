@@ -1,0 +1,33 @@
+{
+  "manifest_version": 3,
+  "name": "Nu CV Draft Generator",
+  "version": "1.0.0",
+  "description": "A Chrome extension to help with job applications",
+  "permissions": [
+    "activeTab",
+    "pageCapture",
+    "storage"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Nu CV Draft Generator"
+  },
+  "icons": {
+    "16": "icons/fi_briefcase.png"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["popup.html", "popup.js"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}
